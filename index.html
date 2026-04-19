@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía para Leonor · Ondas - Física 9° grado</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --surface-2: #f1efe8;
+    --text: #2c2c2a;
+    --text-secondary: #5f5e5a;
+    --text-tertiary: #888780;
+    --border: rgba(0,0,0,0.12);
+    --border-strong: rgba(0,0,0,0.25);
+    --accent: #534AB7;
+    --accent-bg: #EEEDFE;
+    --accent-text: #26215C;
+    --teal: #0F6E56;
+    --teal-bg: #E1F5EE;
+    --teal-text: #04342C;
+    --amber: #854F0B;
+    --amber-bg: #FAEEDA;
+    --amber-text: #412402;
+    --coral: #993C1D;
+    --coral-bg: #FAECE7;
+    --coral-text: #4A1B0C;
+    --blue: #185FA5;
+    --blue-bg: #E6F1FB;
+    --blue-text: #042C53;
+    --green: #3B6D11;
+    --green-bg: #EAF3DE;
+    --green-text: #173404;
+    --pink: #993556;
+    --pink-bg: #FBEAF0;
+    --pink-text: #4B1528;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a18;
+      --surface: #242422;
+      --surface-2: #2e2e2b;
+      --text: #f1efe8;
+      --text-secondary: #b4b2a9;
+      --text-tertiary: #888780;
+      --border: rgba(255,255,255,0.12);
+      --border-strong: rgba(255,255,255,0.25);
+      --accent-bg: #3C3489;
+      --accent-text: #CECBF6;
+      --teal-bg: #085041;
+      --teal-text: #9FE1CB;
+      --amber-bg: #633806;
+      --amber-text: #FAC775;
+      --coral-bg: #712B13;
+      --coral-text: #F5C4B3;
+      --blue-bg: #0C447C;
+      --blue-text: #B5D4F4;
+      --green-bg: #27500A;
+      --green-text: #C0DD97;
+      --pink-bg: #72243E;
+      --pink-text: #F4C0D1;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0 0 0.5rem;
+    color: var(--text);
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 2.5rem 0 1rem;
+    color: var(--text);
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--text);
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 1rem 0 0.5rem;
+    color: var(--text);
+  }
+  p { margin: 0.75rem 0; }
+  .intro {
+    color: var(--text-secondary);
+    font-size: 15px;
+  }
+
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  nav.toc h3 {
+    margin-top: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-tertiary);
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 15px;
+  }
+  nav.toc li { margin: 0.35rem 0; }
+  nav.toc a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  nav.toc a:hover { text-decoration: underline; }
+
+  .callout {
+    background: var(--amber-bg);
+    color: var(--amber-text);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--amber);
+  }
+  .callout.info {
+    background: var(--blue-bg);
+    color: var(--blue-text);
+    border-left-color: var(--blue);
+  }
+  .callout.success {
+    background: var(--teal-bg);
+    color: var(--teal-text);
+    border-left-color: var(--teal);
+  }
+  .callout.concept {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    border-left-color: var(--accent);
+  }
+  .callout strong { font-weight: 500; }
+
+  .formula {
+    background: var(--surface-2);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-family: "SF Mono", Consolas, Monaco, monospace;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  .formula .big {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+  }
+  .formula .where {
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .analogy {
+    display: flex;
+    gap: 12px;
+    background: var(--pink-bg);
+    color: var(--pink-text);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    margin: 1rem 0;
+    align-items: flex-start;
+  }
+  .analogy-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--pink);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .analogy-body { flex: 1; }
+  .analogy strong { font-weight: 500; display: block; margin-bottom: 0.25rem; }
+
+  .exercise {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+  }
+  .exercise-label {
+    display: inline-block;
+    background: var(--green-bg);
+    color: var(--green-text);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 10px;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .exercise-label.test {
+    background: var(--coral-bg);
+    color: var(--coral-text);
+  }
+  .solution-toggle {
+    background: none;
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 0.75rem;
+    font-family: inherit;
+    transition: background 0.15s;
+  }
+  .solution-toggle:hover {
+    background: var(--surface-2);
+  }
+  .solution {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+  }
+  .solution.visible { display: block; }
+  .solution h5 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .interactive-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .control-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0.75rem 0;
+    flex-wrap: wrap;
+  }
+  .control-row label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    min-width: 110px;
+  }
+  .control-row input[type="range"] {
+    flex: 1;
+    min-width: 150px;
+    accent-color: var(--accent);
+  }
+  .control-row .value {
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 60px;
+    text-align: right;
+    color: var(--accent);
+    font-family: "SF Mono", Consolas, Monaco, monospace;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 15px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    font-weight: 500;
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 1rem 0;
+  }
+  .comparison-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+  }
+  .comparison-card h4 { margin-top: 0; }
+  .comparison-card.teal { background: var(--teal-bg); color: var(--teal-text); border-color: var(--teal); }
+  .comparison-card.coral { background: var(--coral-bg); color: var(--coral-text); border-color: var(--coral); }
+  .comparison-card.blue { background: var(--blue-bg); color: var(--blue-text); border-color: var(--blue); }
+
+  .cheatsheet {
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .cheatsheet h2 {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    color: var(--accent);
+  }
+  .cheatsheet .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .cheatsheet .item {
+    background: var(--surface-2);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+  }
+  .cheatsheet .item strong {
+    display: block;
+    color: var(--accent);
+    font-family: "SF Mono", Consolas, Monaco, monospace;
+    font-size: 15px;
+    margin-bottom: 0.25rem;
+  }
+
+  svg { display: block; margin: 1rem auto; max-width: 100%; }
+
+  .tag {
+    display: inline-block;
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 4px;
+  }
+
+  code {
+    background: var(--surface-2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: "SF Mono", Consolas, Monaco, monospace;
+  }
+
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: 0.35rem 0; }
+
+  .wave-canvas-container {
+    background: var(--surface-2);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  canvas { display: block; width: 100%; height: auto; max-width: 100%; }
+
+  .key-term {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .final-summary {
+    background: linear-gradient(135deg, var(--accent-bg), var(--teal-bg));
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .final-summary h2 {
+    border: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Guía para Leonor 📚</h1>
+  <p class="intro">Física — 9° grado · Preparación para evaluación de ondas</p>
+  <p class="intro">Hola Leonor! Esta guía cubre todos los temas del temario, con teoría, analogías cotidianas, diagramas interactivos, ejercicios resueltos y preguntas tipo prueba. Úsala a tu ritmo — puedes mover los deslizadores para experimentar y hacer click en "ver solución" cuando quieras revisar los ejercicios.</p>
+</header>
+
+<nav class="toc">
+  <h3>Contenido</h3>
+  <ol>
+    <li><a href="#previos">Conceptos previos</a></li>
+    <li><a href="#ondulatorios">Movimientos ondulatorios</a></li>
+    <li><a href="#clasificacion">Clasificación de ondas</a></li>
+    <li><a href="#espaciales">Parámetros espaciales</a></li>
+    <li><a href="#temporales">Parámetros temporales</a></li>
+    <li><a href="#rapidez">Rapidez de propagación</a></li>
+    <li><a href="#sismicas">Ondas sísmicas</a></li>
+    <li><a href="#tipo-prueba">Preguntas tipo prueba</a></li>
+    <li><a href="#cheatsheet">Resumen / Machete final</a></li>
+  </ol>
+</nav>
+
+<!-- ================== 1. CONCEPTOS PREVIOS ================== -->
+<section id="previos">
+<h2>1. Conceptos previos</h2>
+
+<p>Antes de entrar a ondas, necesitas tener claros algunos conceptos base de movimiento y energía.</p>
+
+<h3>Movimiento y perturbación</h3>
+<p>Una <span class="key-term">perturbación</span> es cualquier cambio que afecta el estado de equilibrio de un medio. Cuando lanzas una piedra a una piscina quieta, el impacto genera una perturbación que se aleja del punto de impacto: eso es el inicio de una onda.</p>
+
+<div class="analogy">
+  <div class="analogy-icon">💡</div>
+  <div class="analogy-body">
+    <strong>Analogía cotidiana</strong>
+    Imagina una fila de fichas de dominó. Si empujas la primera, cae sobre la segunda, luego la tercera, y así sucesivamente. <em>La fila completa no se mueve</em>, pero la "caída" viaja a lo largo de toda la fila. Eso es una onda: se propaga una <strong>perturbación</strong>, no la materia.
+  </div>
+</div>
+
+<h3>Energía y transporte</h3>
+<p>Las ondas <span class="key-term">transportan energía</span> (y en algunos casos información) de un punto a otro del espacio, <strong>sin transportar materia</strong>. Esta es la idea más importante de todo el tema.</p>
+
+<div class="callout concept">
+  <strong>Idea clave:</strong> Cuando una ola del mar te empuja, lo que llega a ti es energía, no es agua que haya viajado desde el horizonte. El agua sube y baja en el mismo lugar; lo que viaja es el <em>patrón de subidas y bajadas</em>.
+</div>
+
+<h3>Oscilación</h3>
+<p>Una <span class="key-term">oscilación</span> es un movimiento que se repite una y otra vez alrededor de una posición de equilibrio (un péndulo, una cuerda vibrando, un resorte). Las ondas nacen de oscilaciones que se propagan a través de un medio.</p>
+
+<h3>Medio de propagación</h3>
+<p>El <span class="key-term">medio</span> es el material (o el espacio) por donde viaja la onda: aire, agua, cuerdas, tierra. Algunas ondas <strong>necesitan</strong> un medio (sonido, olas); otras <strong>no</strong> lo necesitan (luz, ondas de radio).</p>
+</section>
+
+<!-- ================== 2. MOVIMIENTOS ONDULATORIOS ================== -->
+<section id="ondulatorios">
+<h2>2. Movimientos ondulatorios</h2>
+
+<p>Un <span class="key-term">movimiento ondulatorio</span> es la propagación de una perturbación a través de un medio, en la cual cada partícula del medio oscila alrededor de su posición de equilibrio, pasando energía a sus vecinas.</p>
+
+<h3>Cómo se propaga una onda</h3>
+<p>Observa cómo cada partícula solo oscila <strong>en su lugar</strong>, pero la onda entera avanza:</p>
+
+<div class="wave-canvas-container">
+  <canvas id="wavePropagation" width="780" height="200"></canvas>
+  <div class="control-row">
+    <label>Velocidad</label>
+    <input type="range" id="wavePropSpeed" min="1" max="10" value="5">
+    <span class="value" id="wavePropSpeedVal">5</span>
+  </div>
+  <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">
+    Los puntos rojos son partículas del medio. Fíjate que <strong>suben y bajan en su lugar</strong>: no se desplazan horizontalmente. Lo que avanza hacia la derecha es la <em>forma de la onda</em>, no las partículas.
+  </p>
+</div>
+
+<div class="callout info">
+  <strong>No confundir:</strong> El movimiento de las partículas del medio (vertical, oscilatorio) es <em>distinto</em> del movimiento de la onda (horizontal, de propagación). Es el error más común en las pruebas.
+</div>
+
+<h3>Elementos de una onda</h3>
+
+<svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Partes de una onda</title>
+  <desc>Diagrama mostrando cresta, valle, amplitud, longitud de onda y línea de equilibrio en una onda sinusoidal</desc>
+  <defs>
+    <marker id="arrow1" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <!-- línea de equilibrio -->
+  <line x1="40" y1="140" x2="640" y2="140" stroke="#888780" stroke-width="0.8" stroke-dasharray="4 4"/>
+  <text x="645" y="144" font-size="12" fill="#5f5e5a">equilibrio</text>
+  <!-- curva de la onda -->
+  <path d="M 40 140 Q 100 50, 160 140 T 280 140 T 400 140 T 520 140 T 640 140"
+        stroke="#534AB7" stroke-width="2.5" fill="none"/>
+  <!-- cresta -->
+  <circle cx="100" cy="65" r="4" fill="#993C1D"/>
+  <text x="110" y="60" font-size="13" font-weight="500" fill="#993C1D">Cresta</text>
+  <text x="110" y="75" font-size="11" fill="#5f5e5a">punto más alto</text>
+  <!-- valle -->
+  <circle cx="220" cy="215" r="4" fill="#185FA5"/>
+  <text x="230" y="218" font-size="13" font-weight="500" fill="#185FA5">Valle</text>
+  <text x="230" y="232" font-size="11" fill="#5f5e5a">punto más bajo</text>
+  <!-- amplitud -->
+  <line x1="340" y1="140" x2="340" y2="65" stroke="#0F6E56" stroke-width="1.5" marker-end="url(#arrow1)" marker-start="url(#arrow1)"/>
+  <text x="348" y="105" font-size="13" font-weight="500" fill="#0F6E56">Amplitud (A)</text>
+  <text x="348" y="120" font-size="11" fill="#5f5e5a">equilibrio → cresta</text>
+  <!-- longitud de onda -->
+  <line x1="100" y1="30" x2="340" y2="30" stroke="#854F0B" stroke-width="1.5" marker-end="url(#arrow1)" marker-start="url(#arrow1)"/>
+  <text x="180" y="22" font-size="13" font-weight="500" fill="#854F0B">Longitud de onda (λ)</text>
+  <text x="160" y="245" font-size="11" fill="#5f5e5a">distancia entre dos crestas consecutivas</text>
+</svg>
+
+<ul>
+  <li><strong>Cresta:</strong> el punto más alto de la onda.</li>
+  <li><strong>Valle:</strong> el punto más bajo de la onda.</li>
+  <li><strong>Línea de equilibrio:</strong> la posición de reposo (antes de la perturbación).</li>
+  <li><strong>Amplitud (A):</strong> la distancia vertical entre la línea de equilibrio y una cresta (o un valle). Mide la "fuerza" de la onda.</li>
+  <li><strong>Longitud de onda (λ):</strong> la distancia entre dos crestas consecutivas (o entre dos valles).</li>
+</ul>
+
+</section>
+
+<!-- ================== 3. CLASIFICACIÓN DE ONDAS ================== -->
+<section id="clasificacion">
+<h2>3. Clasificación de ondas</h2>
+
+<p>Las ondas se pueden clasificar según <strong>dos criterios principales</strong>: qué necesitan para propagarse, y cómo oscilan las partículas respecto a la dirección del movimiento.</p>
+
+<h3>Según el medio: mecánicas vs. electromagnéticas</h3>
+
+<div class="comparison-grid">
+  <div class="comparison-card teal">
+    <h4>Ondas mecánicas</h4>
+    <p><strong>Necesitan</strong> un medio material (sólido, líquido o gas) para propagarse.</p>
+    <p><strong>Ejemplos:</strong> sonido, olas del mar, ondas en una cuerda, ondas sísmicas.</p>
+    <p style="font-size: 13px;"><em>En el espacio vacío no hay sonido — por eso en el espacio "nadie puede oír tus gritos".</em></p>
+  </div>
+  <div class="comparison-card coral">
+    <h4>Ondas electromagnéticas</h4>
+    <p><strong>No necesitan</strong> medio: pueden viajar en el vacío.</p>
+    <p><strong>Ejemplos:</strong> luz, ondas de radio, microondas, rayos X, rayos UV.</p>
+    <p style="font-size: 13px;"><em>Por eso nos llega la luz del Sol a través del vacío del espacio.</em></p>
+  </div>
+</div>
+
+<h3>Según la dirección de oscilación: transversales vs. longitudinales</h3>
+
+<div class="wave-canvas-container">
+  <canvas id="transLongCanvas" width="780" height="320"></canvas>
+  <p style="font-size: 14px; color: var(--text-secondary); margin: 0.5rem 0 0;">
+    <strong>Arriba (transversal):</strong> las partículas suben y bajan, perpendicular al avance.<br>
+    <strong>Abajo (longitudinal):</strong> las partículas se acercan y se alejan, paralelas al avance (zonas de compresión y de dilatación).
+  </p>
+</div>
+
+<div class="comparison-grid">
+  <div class="comparison-card blue">
+    <h4>Ondas transversales</h4>
+    <p>La oscilación del medio es <strong>perpendicular</strong> a la dirección en que avanza la onda.</p>
+    <p><strong>Ejemplos:</strong> cuerda de guitarra, luz, ondas en agua (aproximadamente), ondas S de un sismo.</p>
+    <div class="analogy" style="margin: 0.5rem 0 0;">
+      <div class="analogy-icon">🌊</div>
+      <div class="analogy-body">
+        <strong>Ejemplo cotidiano:</strong>
+        Sacudir una cuerda de arriba a abajo: la cuerda sube y baja (vertical), la onda viaja por la cuerda (horizontal).
+      </div>
+    </div>
+  </div>
+  <div class="comparison-card coral">
+    <h4>Ondas longitudinales</h4>
+    <p>La oscilación del medio es <strong>paralela</strong> a la dirección en que avanza la onda. Se forman zonas de compresión (más densas) y dilatación (menos densas).</p>
+    <p><strong>Ejemplos:</strong> sonido (en cualquier medio), ondas P de un sismo, un resorte estirado y empujado.</p>
+    <div class="analogy" style="margin: 0.5rem 0 0;">
+      <div class="analogy-icon">🎵</div>
+      <div class="analogy-body">
+        <strong>Ejemplo cotidiano:</strong>
+        Un resorte Slinky: si empujas un extremo, se forma una "compresión" que viaja hasta el otro extremo.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="callout success">
+  <strong>Truco para recordar:</strong> Trans<strong>versal</strong> → <em>versal</em> suena a "vertical" → perpendicular al movimiento. <strong>Longi</strong>tudinal → <em>longi</em> suena a "a lo largo" → paralela al movimiento.
+</div>
+
+</section>
+
+<!-- ================== 4. PARÁMETROS ESPACIALES ================== -->
+<section id="espaciales">
+<h2>4. Parámetros espaciales</h2>
+
+<p>Los parámetros espaciales describen <strong>cómo es la onda en el espacio</strong>: qué tamaño tiene, cuánta distancia ocupa. Son "parámetros de regla" (se miden con metros).</p>
+
+<h3>Amplitud (A)</h3>
+<p>Distancia entre la línea de equilibrio y el punto de máximo desplazamiento (cresta o valle).</p>
+<ul>
+  <li><strong>Símbolo:</strong> A</li>
+  <li><strong>Unidad:</strong> metro (m)</li>
+  <li><strong>Significado físico:</strong> está relacionada con la <strong>energía</strong> de la onda. Mayor amplitud → mayor energía. En sonido, es el <em>volumen</em>; en luz, es el <em>brillo</em>.</li>
+</ul>
+
+<h3>Longitud de onda (λ — lambda)</h3>
+<p>Distancia entre dos puntos consecutivos que están en la misma fase (por ejemplo, dos crestas seguidas).</p>
+<ul>
+  <li><strong>Símbolo:</strong> λ (letra griega "lambda")</li>
+  <li><strong>Unidad:</strong> metro (m)</li>
+  <li><strong>Significado físico:</strong> define el "tamaño" de un ciclo completo. En luz visible, determina el <em>color</em>; en sonido, está relacionada con el tono (junto con la frecuencia).</li>
+</ul>
+
+<div class="interactive-box">
+  <h4 style="margin-top: 0;">Explorador interactivo: amplitud y longitud de onda</h4>
+  <canvas id="spatialCanvas" width="780" height="220"></canvas>
+  <div class="control-row">
+    <label>Amplitud</label>
+    <input type="range" id="ampSlider" min="10" max="80" value="40">
+    <span class="value" id="ampVal">40 px</span>
+  </div>
+  <div class="control-row">
+    <label>Longitud de onda</label>
+    <input type="range" id="lambdaSlider" min="40" max="300" value="120">
+    <span class="value" id="lambdaVal">120 px</span>
+  </div>
+  <p style="font-size: 14px; color: var(--text-secondary); margin: 0.5rem 0 0;">
+    Experimenta: ¿qué cambia cuando aumentas solo la amplitud? ¿Y cuando cambias la longitud de onda?
+  </p>
+</div>
+
+<div class="analogy">
+  <div class="analogy-icon">🎸</div>
+  <div class="analogy-body">
+    <strong>En la vida real:</strong>
+    Cuando tocas más fuerte una cuerda de guitarra, aumentas la <em>amplitud</em> → suena más fuerte. Cuando cambias de traste, cambias la <em>longitud de onda</em> → cambia la nota.
+  </div>
+</div>
+
+</section>
+
+<!-- ================== 5. PARÁMETROS TEMPORALES ================== -->
+<section id="temporales">
+<h2>5. Parámetros temporales</h2>
+
+<p>Los parámetros temporales describen <strong>cómo es la onda en el tiempo</strong>: qué tan rápido oscila. Son "parámetros de reloj".</p>
+
+<h3>Período (T)</h3>
+<p>Es el <strong>tiempo</strong> que tarda la onda en completar un ciclo completo (por ejemplo, desde una cresta hasta la siguiente cresta, en un punto fijo).</p>
+<ul>
+  <li><strong>Símbolo:</strong> T</li>
+  <li><strong>Unidad:</strong> segundo (s)</li>
+</ul>
+
+<h3>Frecuencia (f)</h3>
+<p>Es el <strong>número de ciclos</strong> que ocurren por segundo.</p>
+<ul>
+  <li><strong>Símbolo:</strong> f</li>
+  <li><strong>Unidad:</strong> hertz (Hz) = 1/s = ciclos por segundo</li>
+</ul>
+
+<div class="callout concept">
+  <strong>Relación fundamental:</strong> Período y frecuencia son <strong>inversos</strong> uno del otro. Si una onda oscila muy rápido (mucha frecuencia), cada ciclo dura muy poco (período pequeño), y al revés.
+</div>
+
+<div class="formula">
+  <div class="big">f = 1 / T</div>
+  <div class="big" style="margin-top: 8px;">T = 1 / f</div>
+  <div class="where">f en hertz (Hz), T en segundos (s)</div>
+</div>
+
+<div class="analogy">
+  <div class="analogy-icon">⏱</div>
+  <div class="analogy-body">
+    <strong>Analogía del corazón:</strong>
+    Si tu corazón late 60 veces por minuto, eso es la <em>frecuencia</em> (60 latidos/min = 1 Hz). Cada latido dura 1 segundo, ese es el <em>período</em>. Ves cómo son inversos: muchos latidos → cada uno breve; pocos latidos → cada uno largo.
+  </div>
+</div>
+
+<h3>Ejemplos de frecuencias reales</h3>
+<table>
+  <thead>
+    <tr><th>Fenómeno</th><th>Frecuencia aproximada</th><th>Período</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Latido cardíaco en reposo</td><td>1 Hz</td><td>1 s</td></tr>
+    <tr><td>Nota musical La central</td><td>440 Hz</td><td>0,0023 s</td></tr>
+    <tr><td>Emisora de radio FM</td><td>~100 MHz (100 000 000 Hz)</td><td>0,00000001 s</td></tr>
+    <tr><td>Luz visible (verde)</td><td>~5,5 × 10¹⁴ Hz</td><td>muy pequeñísimo</td></tr>
+  </tbody>
+</table>
+
+<div class="interactive-box">
+  <h4 style="margin-top: 0;">Explorador: período y frecuencia</h4>
+  <canvas id="temporalCanvas" width="780" height="200"></canvas>
+  <div class="control-row">
+    <label>Frecuencia</label>
+    <input type="range" id="freqSlider" min="1" max="20" value="5" step="1">
+    <span class="value" id="freqVal">5 Hz</span>
+  </div>
+  <div class="control-row">
+    <label>Período (calculado)</label>
+    <span class="value" id="periodVal" style="text-align: left; min-width: auto;">T = 1/5 = 0,200 s</span>
+  </div>
+</div>
+
+</section>
+
+<!-- ================== 6. RAPIDEZ DE PROPAGACIÓN ================== -->
+<section id="rapidez">
+<h2>6. Rapidez de propagación</h2>
+
+<p>La <span class="key-term">rapidez de propagación</span> (v) de una onda es la velocidad a la que la perturbación avanza a través del medio. Depende de <strong>las propiedades del medio</strong>, no de la onda en sí.</p>
+
+<h3>La ecuación fundamental de las ondas</h3>
+
+<div class="formula">
+  <div class="big">v = λ · f</div>
+  <div class="big" style="margin-top: 8px;">v = λ / T</div>
+  <div class="where">v en m/s · λ en m · f en Hz · T en s</div>
+</div>
+
+<div class="callout concept">
+  <strong>¿Por qué tiene sentido esta fórmula?</strong> La onda recorre una longitud de onda (λ) en un período (T). Distancia dividida por tiempo es velocidad. Y como f = 1/T, se puede reescribir como v = λ · f. Esta es <em>la</em> ecuación más importante del tema.
+</div>
+
+<h3>La rapidez depende del medio</h3>
+<p>Una misma onda viaja a <strong>distintas velocidades</strong> según el medio por el que se propague:</p>
+
+<table>
+  <thead>
+    <tr><th>Onda</th><th>Medio</th><th>Rapidez aproximada</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Sonido</td><td>Aire (20 °C)</td><td>343 m/s</td></tr>
+    <tr><td>Sonido</td><td>Agua</td><td>1 480 m/s</td></tr>
+    <tr><td>Sonido</td><td>Acero</td><td>~5 000 m/s</td></tr>
+    <tr><td>Luz</td><td>Vacío</td><td>300 000 000 m/s</td></tr>
+    <tr><td>Onda sísmica P</td><td>Corteza terrestre</td><td>~6 000 m/s</td></tr>
+  </tbody>
+</table>
+
+<div class="callout info">
+  <strong>Regla general:</strong> el sonido viaja <em>más rápido</em> en medios más rígidos (sólidos) que en líquidos, y en líquidos más rápido que en gases. La luz, en cambio, viaja más rápido en el vacío y se frena en medios materiales.
+</div>
+
+<h3>Ejercicios resueltos</h3>
+
+<div class="exercise">
+  <span class="exercise-label">Ejercicio 1</span>
+  <p>Una onda tiene una longitud de onda de 2 m y una frecuencia de 5 Hz. ¿Cuál es su rapidez de propagación?</p>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver solución</button>
+  <div class="solution">
+    <h5>Datos</h5>
+    <p>λ = 2 m · f = 5 Hz</p>
+    <h5>Fórmula</h5>
+    <p>v = λ · f</p>
+    <h5>Reemplazo</h5>
+    <p>v = 2 m · 5 Hz = 2 m · 5 (1/s) = 10 m/s</p>
+    <h5>Respuesta</h5>
+    <p><strong>v = 10 m/s</strong></p>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label">Ejercicio 2</span>
+  <p>Una onda viaja a 340 m/s en el aire (sonido) y tiene una frecuencia de 170 Hz. ¿Cuál es su longitud de onda?</p>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver solución</button>
+  <div class="solution">
+    <h5>Datos</h5>
+    <p>v = 340 m/s · f = 170 Hz</p>
+    <h5>Fórmula (despejando λ)</h5>
+    <p>v = λ · f → λ = v / f</p>
+    <h5>Reemplazo</h5>
+    <p>λ = 340 m/s ÷ 170 Hz = 2 m</p>
+    <h5>Respuesta</h5>
+    <p><strong>λ = 2 m</strong></p>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label">Ejercicio 3</span>
+  <p>El período de una onda es de 0,05 s y su longitud de onda es 3 m. Calcula la frecuencia y la rapidez de propagación.</p>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver solución</button>
+  <div class="solution">
+    <h5>Datos</h5>
+    <p>T = 0,05 s · λ = 3 m</p>
+    <h5>Paso 1 — Frecuencia</h5>
+    <p>f = 1/T = 1 / 0,05 s = 20 Hz</p>
+    <h5>Paso 2 — Rapidez</h5>
+    <p>v = λ · f = 3 m · 20 Hz = 60 m/s</p>
+    <h5>Respuesta</h5>
+    <p><strong>f = 20 Hz · v = 60 m/s</strong></p>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label">Ejercicio 4</span>
+  <p>Una ola del mar tiene crestas separadas cada 8 m y una de ellas llega a la playa cada 4 segundos. ¿A qué rapidez avanzan las olas?</p>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver solución</button>
+  <div class="solution">
+    <h5>Interpretación</h5>
+    <p>"Crestas separadas cada 8 m" → λ = 8 m. "Una cresta cada 4 s" → T = 4 s.</p>
+    <h5>Fórmula</h5>
+    <p>v = λ / T</p>
+    <h5>Reemplazo</h5>
+    <p>v = 8 m / 4 s = 2 m/s</p>
+    <h5>Respuesta</h5>
+    <p><strong>v = 2 m/s</strong></p>
+  </div>
+</div>
+
+</section>
+
+<!-- ================== 7. ONDAS SÍSMICAS ================== -->
+<section id="sismicas">
+<h2>7. Ondas sísmicas</h2>
+
+<p>Las <span class="key-term">ondas sísmicas</span> son ondas mecánicas que se propagan a través de la Tierra cuando ocurre un terremoto (o una explosión, o un movimiento de placas). Son especialmente importantes en Chile por su alta actividad sísmica.</p>
+
+<h3>Origen: el hipocentro y el epicentro</h3>
+
+<svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Hipocentro y epicentro de un sismo</title>
+  <desc>Diagrama de corte vertical mostrando el hipocentro bajo tierra y el epicentro en la superficie, con ondas propagándose</desc>
+  <!-- cielo -->
+  <rect x="0" y="0" width="680" height="90" fill="#B5D4F4" opacity="0.3"/>
+  <!-- tierra -->
+  <rect x="0" y="90" width="680" height="190" fill="#D3D1C7" opacity="0.5"/>
+  <!-- superficie -->
+  <line x1="0" y1="90" x2="680" y2="90" stroke="#5f5e5a" stroke-width="1.5"/>
+  <text x="10" y="82" font-size="12" fill="#444441">Superficie terrestre</text>
+  <!-- hipocentro -->
+  <circle cx="340" cy="200" r="8" fill="#E24B4A"/>
+  <text x="355" y="205" font-size="13" font-weight="500" fill="#A32D2D">Hipocentro (foco)</text>
+  <text x="355" y="220" font-size="11" fill="#5f5e5a">punto bajo tierra donde se origina</text>
+  <!-- línea vertical -->
+  <line x1="340" y1="90" x2="340" y2="200" stroke="#A32D2D" stroke-width="1" stroke-dasharray="4 4"/>
+  <!-- epicentro -->
+  <circle cx="340" cy="90" r="8" fill="#BA7517"/>
+  <text x="355" y="75" font-size="13" font-weight="500" fill="#854F0B">Epicentro</text>
+  <text x="355" y="60" font-size="11" fill="#5f5e5a">punto en la superficie justo encima</text>
+  <!-- ondas concéntricas -->
+  <circle cx="340" cy="200" r="50" fill="none" stroke="#534AB7" stroke-width="1.2" opacity="0.6"/>
+  <circle cx="340" cy="200" r="90" fill="none" stroke="#534AB7" stroke-width="1" opacity="0.4"/>
+  <circle cx="340" cy="200" r="130" fill="none" stroke="#534AB7" stroke-width="0.8" opacity="0.25"/>
+  <!-- ondas en superficie -->
+  <path d="M 180 90 Q 200 86 220 90 T 260 90 T 300 90 T 340 90" stroke="#0F6E56" stroke-width="1.5" fill="none"/>
+  <path d="M 340 90 Q 360 86 380 90 T 420 90 T 460 90 T 500 90" stroke="#0F6E56" stroke-width="1.5" fill="none"/>
+  <text x="180" y="38" font-size="11" fill="#0F6E56">Ondas superficiales viajando</text>
+</svg>
+
+<ul>
+  <li><strong>Hipocentro (o foco):</strong> el punto <em>bajo tierra</em> donde se origina el sismo.</li>
+  <li><strong>Epicentro:</strong> el punto <em>en la superficie</em> justo encima del hipocentro. Suele ser la zona con mayor daño.</li>
+</ul>
+
+<h3>Tipos de ondas sísmicas</h3>
+
+<div class="comparison-grid">
+  <div class="comparison-card coral">
+    <h4>Ondas P (Primarias)</h4>
+    <ul style="margin: 0.5rem 0; padding-left: 1.2rem;">
+      <li><strong>Tipo:</strong> longitudinales (compresión)</li>
+      <li><strong>Velocidad:</strong> las más rápidas (~6 000 m/s)</li>
+      <li><strong>Llegan:</strong> primero al sismógrafo</li>
+      <li><strong>Se propagan en:</strong> sólidos, líquidos y gases</li>
+      <li><strong>Daño:</strong> menos destructivas</li>
+    </ul>
+  </div>
+  <div class="comparison-card blue">
+    <h4>Ondas S (Secundarias)</h4>
+    <ul style="margin: 0.5rem 0; padding-left: 1.2rem;">
+      <li><strong>Tipo:</strong> transversales (cizalla)</li>
+      <li><strong>Velocidad:</strong> más lentas (~3 500 m/s)</li>
+      <li><strong>Llegan:</strong> después de las P</li>
+      <li><strong>Se propagan en:</strong> sólo sólidos</li>
+      <li><strong>Daño:</strong> más destructivas que las P</li>
+    </ul>
+  </div>
+  <div class="comparison-card teal">
+    <h4>Ondas superficiales (L y R)</h4>
+    <ul style="margin: 0.5rem 0; padding-left: 1.2rem;">
+      <li><strong>Tipo:</strong> combinación compleja</li>
+      <li><strong>Velocidad:</strong> las más lentas</li>
+      <li><strong>Llegan:</strong> al final</li>
+      <li><strong>Se propagan:</strong> solo por la superficie</li>
+      <li><strong>Daño:</strong> las <em>más destructivas</em></li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout info">
+  <strong>Cómo se localiza un sismo:</strong> Los sismólogos miden la <em>diferencia de tiempo</em> entre la llegada de la onda P y la onda S en varias estaciones. Como las P son más rápidas, llegan antes — comparando los tiempos se puede calcular la distancia al epicentro. Con tres estaciones distintas, se triangula la ubicación exacta del epicentro.
+</div>
+
+<div class="analogy">
+  <div class="analogy-icon">⚡</div>
+  <div class="analogy-body">
+    <strong>Analogía del rayo y el trueno:</strong>
+    Cuando ves un rayo y cuentas los segundos hasta escuchar el trueno, estás haciendo lo mismo que un sismógrafo: la luz (como la onda P) llega primero, el sonido (como la onda S) llega después. La diferencia de tiempo te dice qué tan lejos está.
+  </div>
+</div>
+
+</section>
+
+<!-- ================== 8. PREGUNTAS TIPO PRUEBA ================== -->
+<section id="tipo-prueba">
+<h2>8. Preguntas tipo prueba</h2>
+
+<p>Ejercicios y preguntas similares a las que podrías encontrar en la evaluación. Intenta resolverlas <strong>antes</strong> de ver la solución.</p>
+
+<div class="exercise">
+  <span class="exercise-label test">Pregunta 1 — Conceptual</span>
+  <p>Una onda transporta energía y materia de un punto a otro. ¿Verdadero o falso? Justifica.</p>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver respuesta</button>
+  <div class="solution">
+    <p><strong>Falso.</strong> Las ondas transportan <em>solo energía</em> (y en algunos casos información), pero <em>no materia</em>. Las partículas del medio oscilan en su lugar alrededor de una posición de equilibrio; lo que se propaga es la perturbación, no las partículas.</p>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label test">Pregunta 2 — Clasificación</span>
+  <p>Clasifica las siguientes ondas como <em>mecánicas</em> o <em>electromagnéticas</em>, y como <em>transversales</em> o <em>longitudinales</em>:</p>
+  <ol type="a">
+    <li>Sonido de una guitarra en el aire</li>
+    <li>Luz de una ampolleta</li>
+    <li>Ondas en una cuerda que se sacude</li>
+    <li>Ondas de radio</li>
+    <li>Onda P de un sismo</li>
+  </ol>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver respuesta</button>
+  <div class="solution">
+    <ol type="a">
+      <li><strong>Sonido:</strong> mecánica (necesita aire), longitudinal (compresiones).</li>
+      <li><strong>Luz:</strong> electromagnética (viaja en vacío), transversal.</li>
+      <li><strong>Cuerda:</strong> mecánica, transversal.</li>
+      <li><strong>Radio:</strong> electromagnética, transversal.</li>
+      <li><strong>Onda P:</strong> mecánica, longitudinal.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label test">Pregunta 3 — Cálculo</span>
+  <p>Una onda tiene un período de 0,25 s y una longitud de onda de 5 m. Calcula:</p>
+  <ol type="a">
+    <li>La frecuencia</li>
+    <li>La rapidez de propagación</li>
+  </ol>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver respuesta</button>
+  <div class="solution">
+    <h5>a) Frecuencia</h5>
+    <p>f = 1/T = 1 / 0,25 s = <strong>4 Hz</strong></p>
+    <h5>b) Rapidez</h5>
+    <p>v = λ · f = 5 m · 4 Hz = <strong>20 m/s</strong></p>
+    <p>Alternativamente: v = λ/T = 5 m / 0,25 s = 20 m/s ✓</p>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label test">Pregunta 4 — Aplicación</span>
+  <p>El sonido viaja a 340 m/s en el aire. Si una nota musical tiene una frecuencia de 680 Hz, ¿cuál es su longitud de onda?</p>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver respuesta</button>
+  <div class="solution">
+    <p>v = λ · f → λ = v / f = 340 / 680 = <strong>0,5 m</strong></p>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label test">Pregunta 5 — Análisis gráfico</span>
+  <p>En una onda, la amplitud se duplica pero la frecuencia y la longitud de onda se mantienen iguales. ¿Qué cambia? ¿Qué no cambia?</p>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver respuesta</button>
+  <div class="solution">
+    <p><strong>Cambia:</strong> la <em>energía</em> de la onda aumenta (amplitud mayor → más energía). En sonido sería un sonido más fuerte; en luz, una luz más brillante.</p>
+    <p><strong>No cambia:</strong> la <em>rapidez</em> de propagación (porque v = λ·f depende solo de λ y f, que se mantienen). Tampoco cambia el tono si es sonido, ni el color si es luz.</p>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label test">Pregunta 6 — Sismos</span>
+  <p>En un sismo, ¿por qué las ondas P llegan siempre antes que las ondas S a un sismógrafo?</p>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver respuesta</button>
+  <div class="solution">
+    <p>Porque las ondas P son <strong>longitudinales</strong> y viajan más rápido (aproximadamente 6 000 m/s) que las ondas S (que son transversales y viajan a unos 3 500 m/s). Al tener mayor rapidez de propagación, recorren la misma distancia en menos tiempo. Esta diferencia permite calcular la distancia al hipocentro.</p>
+  </div>
+</div>
+
+<div class="exercise">
+  <span class="exercise-label test">Pregunta 7 — Desafío</span>
+  <p>Una onda se genera en una cuerda con frecuencia 10 Hz. Si la rapidez en esa cuerda es 20 m/s y luego cambia a otra cuerda más tensa donde la rapidez es 40 m/s (la frecuencia se mantiene porque depende de la fuente):</p>
+  <ol type="a">
+    <li>¿Cuál era la longitud de onda en la primera cuerda?</li>
+    <li>¿Cuál es la longitud de onda en la segunda cuerda?</li>
+    <li>¿Qué cambió y qué no?</li>
+  </ol>
+  <button class="solution-toggle" onclick="toggleSolution(this)">Ver respuesta</button>
+  <div class="solution">
+    <h5>a) Primera cuerda</h5>
+    <p>λ₁ = v₁ / f = 20 / 10 = <strong>2 m</strong></p>
+    <h5>b) Segunda cuerda</h5>
+    <p>λ₂ = v₂ / f = 40 / 10 = <strong>4 m</strong></p>
+    <h5>c) Análisis</h5>
+    <p>La <strong>frecuencia se mantuvo</strong> (depende de la fuente que generó la onda). La <strong>rapidez cambió</strong> (depende del medio). Como v = λ·f, si v aumenta y f no cambia, entonces λ también aumenta. Esta es una propiedad muy importante: <em>cuando una onda cambia de medio, cambia su rapidez y su longitud de onda, pero no su frecuencia</em>.</p>
+  </div>
+</div>
+
+</section>
+
+<!-- ================== 9. CHEATSHEET ================== -->
+<section id="cheatsheet">
+<div class="cheatsheet">
+  <h2>🎯 Resumen / Machete final</h2>
+  <p>Todo lo esencial en una sola vista. Memoriza esto y tendrás el 80% del examen.</p>
+
+  <h3>Fórmulas imprescindibles</h3>
+  <div class="grid">
+    <div class="item">
+      <strong>v = λ · f</strong>
+      Rapidez = long. de onda × frecuencia
+    </div>
+    <div class="item">
+      <strong>v = λ / T</strong>
+      Rapidez = long. de onda / período
+    </div>
+    <div class="item">
+      <strong>f = 1 / T</strong>
+      Frecuencia es el inverso del período
+    </div>
+    <div class="item">
+      <strong>T = 1 / f</strong>
+      Período es el inverso de la frecuencia
+    </div>
+  </div>
+
+  <h3>Unidades</h3>
+  <div class="grid">
+    <div class="item"><strong>A</strong>amplitud → metro (m)</div>
+    <div class="item"><strong>λ</strong>longitud de onda → metro (m)</div>
+    <div class="item"><strong>T</strong>período → segundo (s)</div>
+    <div class="item"><strong>f</strong>frecuencia → hertz (Hz)</div>
+    <div class="item"><strong>v</strong>rapidez → m/s</div>
+  </div>
+
+  <h3>Clasificación</h3>
+  <div class="grid">
+    <div class="item"><strong>Mecánica</strong>necesita medio (sonido, ola, cuerda)</div>
+    <div class="item"><strong>Electromagnética</strong>no necesita medio (luz, radio)</div>
+    <div class="item"><strong>Transversal</strong>oscila ⊥ al avance (cuerda, luz, S)</div>
+    <div class="item"><strong>Longitudinal</strong>oscila ∥ al avance (sonido, P)</div>
+  </div>
+
+  <h3>Ondas sísmicas</h3>
+  <div class="grid">
+    <div class="item"><strong>Hipocentro</strong>origen bajo tierra</div>
+    <div class="item"><strong>Epicentro</strong>superficie sobre el hipocentro</div>
+    <div class="item"><strong>Ondas P</strong>longitudinales, rápidas, llegan 1°</div>
+    <div class="item"><strong>Ondas S</strong>transversales, más lentas, llegan 2°</div>
+    <div class="item"><strong>Superficiales</strong>las más destructivas</div>
+  </div>
+
+  <h3>Conceptos clave para conceptuales</h3>
+  <ul>
+    <li>Las ondas transportan <strong>energía, no materia</strong>.</li>
+    <li>Mayor <strong>amplitud</strong> → mayor <strong>energía</strong>.</li>
+    <li>La <strong>rapidez</strong> depende del <strong>medio</strong>, no de la onda.</li>
+    <li>Al cambiar de medio: cambia v y λ, <strong>no cambia f</strong>.</li>
+    <li>En sonido: amplitud = volumen, frecuencia = tono.</li>
+    <li>En luz: amplitud = brillo, frecuencia = color.</li>
+  </ul>
+
+  <h3>Errores comunes a evitar</h3>
+  <ul>
+    <li>❌ Confundir el movimiento de las partículas con el de la onda.</li>
+    <li>❌ Olvidar invertir en f = 1/T o T = 1/f.</li>
+    <li>❌ Usar unidades mezcladas (ms con s, cm con m).</li>
+    <li>❌ Decir que la rapidez depende de la amplitud (no, depende del medio).</li>
+    <li>❌ Confundir longitudinal con transversal.</li>
+  </ul>
+</div>
+
+<div class="final-summary">
+  <h2>¡Mucha suerte Leonor! 🎓</h2>
+  <p style="margin: 0; font-size: 15px; color: var(--text-secondary);">
+    Recuerda: las ecuaciones estarán en la prueba y puedes usar calculadora.<br>
+    Lo que necesitas dominar es <strong>cuándo usar cada fórmula</strong> y <strong>cómo interpretar los conceptos</strong>.<br>
+    <em>Lee cada pregunta dos veces antes de responder. ¡Tú puedes!</em>
+  </p>
+</div>
+</section>
+
+</div>
+
+<script>
+// ============ Toggle solution ============
+function toggleSolution(btn) {
+  const sol = btn.nextElementSibling;
+  sol.classList.toggle('visible');
+  btn.textContent = sol.classList.contains('visible') ? 'Ocultar solución' : 'Ver solución';
+}
+
+// ============ Helper: color based on theme ============
+function themeColor(light, dark) {
+  return matchMedia('(prefers-color-scheme: dark)').matches ? dark : light;
+}
+
+// ============ Wave propagation canvas ============
+(function() {
+  const canvas = document.getElementById('wavePropagation');
+  const ctx = canvas.getContext('2d');
+  const speedInput = document.getElementById('wavePropSpeed');
+  const speedVal = document.getElementById('wavePropSpeedVal');
+  let phase = 0;
+  let speed = 5;
+
+  speedInput.addEventListener('input', e => {
+    speed = +e.target.value;
+    speedVal.textContent = speed;
+  });
+
+  function draw() {
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    const cy = h / 2;
+    // equilibrium line
+    ctx.strokeStyle = themeColor('#888780', '#888780');
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(20, cy); ctx.lineTo(w - 20, cy);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // wave
+    ctx.strokeStyle = themeColor('#534AB7', '#AFA9EC');
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    const amp = 55;
+    const lambda = 180;
+    for (let x = 20; x < w - 20; x++) {
+      const y = cy - amp * Math.sin((x - phase) * 2 * Math.PI / lambda);
+      if (x === 20) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // particles
+    const particleXs = [80, 160, 240, 320, 400, 480, 560, 640, 720];
+    particleXs.forEach(x => {
+      const y = cy - amp * Math.sin((x - phase) * 2 * Math.PI / lambda);
+      ctx.fillStyle = '#E24B4A';
+      ctx.beginPath();
+      ctx.arc(x, y, 6, 0, Math.PI * 2);
+      ctx.fill();
+      // vertical line to show oscillation
+      ctx.strokeStyle = themeColor('#E24B4A', '#F09595');
+      ctx.globalAlpha = 0.3;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(x, cy - amp); ctx.lineTo(x, cy + amp);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    });
+
+    // arrow showing propagation direction
+    ctx.strokeStyle = themeColor('#0F6E56', '#5DCAA5');
+    ctx.fillStyle = themeColor('#0F6E56', '#5DCAA5');
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(w - 140, 25); ctx.lineTo(w - 40, 25);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(w - 40, 25); ctx.lineTo(w - 50, 20); ctx.lineTo(w - 50, 30); ctx.closePath();
+    ctx.fill();
+    ctx.font = '13px -apple-system, sans-serif';
+    ctx.fillText('dirección de propagación', w - 240, 20);
+
+    phase += speed;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ============ Transversal vs Longitudinal canvas ============
+(function() {
+  const canvas = document.getElementById('transLongCanvas');
+  const ctx = canvas.getContext('2d');
+  let phase = 0;
+
+  function draw() {
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+
+    // TRANSVERSAL (top half)
+    const cy1 = 80;
+    ctx.fillStyle = themeColor('#185FA5', '#85B7EB');
+    ctx.font = '14px -apple-system, sans-serif';
+    ctx.fillText('Transversal (oscilación ⊥ al movimiento)', 20, 25);
+
+    // particles arranged in a line
+    const nParticles = 25;
+    const startX = 40;
+    const endX = w - 40;
+    const step = (endX - startX) / (nParticles - 1);
+    const amp1 = 35;
+    const lambda1 = 240;
+
+    for (let i = 0; i < nParticles; i++) {
+      const x = startX + i * step;
+      const y = cy1 - amp1 * Math.sin((x - phase) * 2 * Math.PI / lambda1);
+      ctx.fillStyle = themeColor('#185FA5', '#85B7EB');
+      ctx.beginPath();
+      ctx.arc(x, y, 5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // wave direction arrow
+    ctx.strokeStyle = themeColor('#5f5e5a', '#b4b2a9');
+    ctx.fillStyle = themeColor('#5f5e5a', '#b4b2a9');
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(startX, 140); ctx.lineTo(endX, 140);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(endX, 140); ctx.lineTo(endX - 10, 136); ctx.lineTo(endX - 10, 144); ctx.closePath();
+    ctx.fill();
+    ctx.font = '12px -apple-system, sans-serif';
+    ctx.fillText('avance de la onda →', endX - 150, 160);
+
+    // LONGITUDINAL (bottom half)
+    const cy2 = 240;
+    ctx.fillStyle = themeColor('#993C1D', '#F0997B');
+    ctx.font = '14px -apple-system, sans-serif';
+    ctx.fillText('Longitudinal (oscilación ∥ al movimiento)', 20, 195);
+
+    const nParticles2 = 30;
+    const lambda2 = 180;
+    const amp2 = 18;
+    for (let i = 0; i < nParticles2; i++) {
+      const baseX = startX + i * ((endX - startX) / (nParticles2 - 1));
+      // compression/rarefaction via horizontal displacement
+      const x = baseX + amp2 * Math.sin((baseX - phase) * 2 * Math.PI / lambda2);
+      ctx.fillStyle = themeColor('#993C1D', '#F0997B');
+      ctx.beginPath();
+      ctx.arc(x, cy2, 5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    // wave direction arrow
+    ctx.strokeStyle = themeColor('#5f5e5a', '#b4b2a9');
+    ctx.fillStyle = themeColor('#5f5e5a', '#b4b2a9');
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(startX, 290); ctx.lineTo(endX, 290);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(endX, 290); ctx.lineTo(endX - 10, 286); ctx.lineTo(endX - 10, 294); ctx.closePath();
+    ctx.fill();
+    ctx.font = '12px -apple-system, sans-serif';
+    ctx.fillText('avance de la onda →', endX - 150, 310);
+
+    phase += 2;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ============ Spatial parameters canvas ============
+(function() {
+  const canvas = document.getElementById('spatialCanvas');
+  const ctx = canvas.getContext('2d');
+  const ampSlider = document.getElementById('ampSlider');
+  const lambdaSlider = document.getElementById('lambdaSlider');
+  const ampVal = document.getElementById('ampVal');
+  const lambdaVal = document.getElementById('lambdaVal');
+
+  function draw() {
+    const amp = +ampSlider.value;
+    const lambda = +lambdaSlider.value;
+    ampVal.textContent = amp + ' px';
+    lambdaVal.textContent = lambda + ' px';
+
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    const cy = h / 2;
+
+    // equilibrium line
+    ctx.strokeStyle = themeColor('#888780', '#888780');
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(40, cy); ctx.lineTo(w - 40, cy);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // wave
+    ctx.strokeStyle = themeColor('#534AB7', '#AFA9EC');
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    for (let x = 40; x < w - 40; x++) {
+      const y = cy - amp * Math.sin((x - 40) * 2 * Math.PI / lambda);
+      if (x === 40) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // amplitude marker
+    const xMarker = 40 + lambda / 4;
+    ctx.strokeStyle = themeColor('#0F6E56', '#5DCAA5');
+    ctx.fillStyle = themeColor('#0F6E56', '#5DCAA5');
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(xMarker, cy); ctx.lineTo(xMarker, cy - amp);
+    ctx.stroke();
+    ctx.font = '13px -apple-system, sans-serif';
+    ctx.fillText('A', xMarker + 5, cy - amp / 2);
+
+    // wavelength marker (if fits)
+    if (40 + lambda < w - 40) {
+      const x1 = 40;
+      const x2 = 40 + lambda;
+      ctx.strokeStyle = themeColor('#854F0B', '#EF9F27');
+      ctx.fillStyle = themeColor('#854F0B', '#EF9F27');
+      ctx.beginPath();
+      ctx.moveTo(x1, 25); ctx.lineTo(x2, 25);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x1, 25); ctx.lineTo(x1 + 6, 21); ctx.lineTo(x1 + 6, 29); ctx.closePath(); ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(x2, 25); ctx.lineTo(x2 - 6, 21); ctx.lineTo(x2 - 6, 29); ctx.closePath(); ctx.fill();
+      ctx.fillText('λ', (x1 + x2) / 2 - 4, 18);
+    }
+  }
+
+  ampSlider.addEventListener('input', draw);
+  lambdaSlider.addEventListener('input', draw);
+  draw();
+})();
+
+// ============ Temporal parameters canvas ============
+(function() {
+  const canvas = document.getElementById('temporalCanvas');
+  const ctx = canvas.getContext('2d');
+  const freqSlider = document.getElementById('freqSlider');
+  const freqVal = document.getElementById('freqVal');
+  const periodVal = document.getElementById('periodVal');
+  let phase = 0;
+
+  function draw() {
+    const f = +freqSlider.value;
+    freqVal.textContent = f + ' Hz';
+    const T = (1 / f).toFixed(3);
+    periodVal.textContent = `T = 1/${f} = ${T} s`;
+
+    const w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    const cy = h / 2;
+
+    // time axis
+    ctx.strokeStyle = themeColor('#888780', '#888780');
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(40, cy); ctx.lineTo(w - 40, cy);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // wave
+    ctx.strokeStyle = themeColor('#534AB7', '#AFA9EC');
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    const amp = 60;
+    const pixelsPerSecond = (w - 80) / 1; // 1 second spans full width
+    for (let x = 40; x < w - 40; x++) {
+      const t = (x - 40) / pixelsPerSecond;
+      const y = cy - amp * Math.sin(2 * Math.PI * f * t + phase);
+      if (x === 40) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // time markers
+    ctx.fillStyle = themeColor('#5f5e5a', '#b4b2a9');
+    ctx.font = '12px -apple-system, sans-serif';
+    for (let t = 0; t <= 1; t += 0.25) {
+      const x = 40 + t * pixelsPerSecond;
+      ctx.fillText(t.toFixed(2) + ' s', x - 15, h - 10);
+    }
+
+    phase -= 0.05;
+    requestAnimationFrame(draw);
+  }
+  freqSlider.addEventListener('input', () => {}); // draw loop handles it
+  draw();
+})();
+</script>
+</body>
+</html>
